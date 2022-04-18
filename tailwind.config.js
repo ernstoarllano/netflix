@@ -7,13 +7,22 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          1000: '#010511'
+          1000: "#010511"
         }
       },
       height: {
-        hero: '95vh'
+        "screen-1/2": "50vh",
+        "screen-2/3": "66vh",
+        "screen-3/4": "75vh"
+      },
+      backgroundImage: {
+        "gradient-to-b":
+          "linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);",
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    require("tailwind-scrollbar"),
+  ],
 }
