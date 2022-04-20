@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    @apply !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-red-600 !scrollbar-color-red-600;
+  }
+
   html {
     @apply scroll-smooth;
   }

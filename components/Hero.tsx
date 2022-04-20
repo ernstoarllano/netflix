@@ -27,9 +27,11 @@ const Hero = ({ movies }: Hero) => {
         {movie?.overview}
       </p>
       <div className="flex flex-row space-x-3">
-        <PlayIcon className="w-10 h-10" />
-        <button onClick={() => setCurrentMovie(movie)}>
-          <InformationCircleIcon className="w-10 h-10" />
+        <button className="flex items-center gap-x-1 px-6 py-2 text-sm font-semibold text-black bg-white rounded transition hover:opacity-75">
+          <PlayIcon className="w-6 h-6" /> Play
+        </button>
+        <button className="flex items-center gap-x-1 px-6 py-2 text-sm font-semibold text-white bg-slate-500 rounded transition hover:opacity-75" onClick={() => setCurrentMovie(movie)}>
+          <InformationCircleIcon className="w-6 h-6" /> More Info
         </button>
       </div>
     </div>

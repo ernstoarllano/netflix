@@ -8,11 +8,16 @@ const Carousel = ({ header, movies }: Carousel) => {
   const [isMoved, setIsMoved] = useState<boolean | false>(false)
 
   const handleClick = (direction: string) => {
-    setIsMoved(true)
-
     if (carouselRef.current) {
       const { scrollLeft, clientWidth } = carouselRef.current
       const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth
+
+      // TODO: Figure out a scroll max to hide right arrow
+      if (scrollTo > 0) {
+        setIsMoved(true)
+      } else {
+        setIsMoved(false)
+      }
 
       carouselRef.current.scrollTo({ left: scrollTo, behavior: "smooth" })
     }
@@ -23,7 +28,7 @@ const Carousel = ({ header, movies }: Carousel) => {
       <div className="relative ml-4 lg:ml-10 py-4 space-y-2">
         <h2 className="text-2xl font-semibold">{header}</h2>
         <div className="relative">
-          <button className="absolute top-1/3 left-2 z-40" onClick={() => handleClick("left")}>
+          <button className={`${!isMoved && 'hidden'} absolute top-1/3 left-2 z-40`} onClick={() => handleClick("left")}>
             <ChevronLeftIcon className="w-12 h-12" />
           </button>
           <div className="flex items-center space-x-2.5 overflow-x-scroll overflow-y-hidden scrollbar-hide" ref={carouselRef}>
