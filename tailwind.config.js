@@ -29,8 +29,11 @@ module.exports = {
     require("tailwind-scrollbar"),
     plugin(function ({ addUtilities }) {
       addUtilities({
-        '.scrollbar-color-red-600': {
-          scrollbarColor: '#dc2626 #dc2626'
+        ".scrollbar-color-red-600": {
+          scrollbarColor: "#dc2626 #dc2626"
+        },
+        ".bg-login": {
+          backgroundImage: "url('/login.jpg')"
         }
       })
     })
