@@ -25,7 +25,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={`fixed top-0 z-50 w-full px-4 lg:px-10 py-4 ${isScrolled ? 'bg-black' : 'bg-transparent'} transition-all`}>
+    <header className={`fixed top-0 z-50 w-full px-4 lg:px-10 py-4 ${isScrolled ? 'bg-gray-1000' : 'bg-transparent'} transition-all`}>
       <div className="flex items-center justify-between">
         <div className="flex flex-row items-center space-x-2 md:space-x-20">
           <Image src="/netflix.svg" alt="Netflix" width={150} height={50} className="cursor-pointer" />
@@ -36,8 +36,10 @@ const Header = () => {
             <li>My List</li>
           </ul>
         </div>
-        <div className="md:flex md:flex-row md:items-center md:justify-between ml-auto mr-0 md:space-x-10">
-          <SearchIcon className="inline w-6 h-6" />
+        <div className="flex flex-row items-center justify-between ml-auto mr-0 space-x-4 md:space-x-10">
+          <button>
+            <SearchIcon className="inline w-6 h-6" />
+          </button>
           <p className="hidden md:inline">Kids</p>
           <BellIcon className="hidden md:inline w-6 h-6" />
           <div className="hidden md:inline">
@@ -46,7 +48,7 @@ const Header = () => {
             </Link>
           </div>
           <button onClick={logout}>
-            <LogoutIcon className="w-6 h-6" />
+            <LogoutIcon className="inline w-6 h-6" />
           </button>
         </div>
       </div>

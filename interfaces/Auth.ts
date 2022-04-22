@@ -9,6 +9,5 @@ export interface IAuth {
   signUp: (email: string, password: string) => Promise<void>
   signIn: (email: string, password: string) => Promise<void>
   logout: () => Promise<void>
-  error: string | null
   loading: boolean
 }

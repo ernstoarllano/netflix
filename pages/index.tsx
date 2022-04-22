@@ -1,21 +1,18 @@
-import { useRecoilValue } from "recoil"
 import Head from "next/head"
 import { Home } from "../interfaces/Home"
 import Header from "../components/Header"
 import Hero from "../components/Hero"
 import Carousel from "../components/Carousel"
 import requests from "../utils/requests"
-import { movieState } from "../atoms/atoms"
 import useAuth from "../hooks/useAuth"
 
 const Home = ({ netflixOriginals, topRated, trending, actionMovies, comedyMovies, horrorMovies, romanceMovies, documentaries }: Home) => {
-  const movie = useRecoilValue(movieState)
   const { loading } = useAuth()
 
   if (loading) return null
 
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-gray-1000">
+    <div className="relative h-screen-3/4 sm:h-screen-landscape lg:h-screen bg-gradient-to-b from-gray-900/10 to-gray-1000">
       <Head>
         <title>
           Home - Netflix

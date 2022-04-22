@@ -6,6 +6,7 @@ import Image from "next/image"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import useAuth from "../hooks/useAuth"
+import { Toaster } from "react-hot-toast"
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -28,7 +29,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex items-center justify-center relative w-screen h-screen md:bg-cover md:bg-login">
+    <div className="flex items-center justify-center relative w-screen md:h-screen md:bg-cover md:bg-login">
       <Head>
         <title>
           Login - Netflix
@@ -38,7 +39,7 @@ const Login = () => {
       <div className="absolute top-4 left-4 cursor-pointer">
         <Image src="/netflix.svg" alt="Netflix" width={150} height={50} />
       </div>
-      <form className="relative w-full max-w-sm mt-24 px-6 py-14 space-y-8 bg-black/75 rounded" onSubmit={handleSubmit(onSubmit)}>
+      <form className="relative w-full max-w-sm mt-24 p-6 space-y-8 bg-black/75 rounded" onSubmit={handleSubmit(onSubmit)}>
         <h1 className="text-4xl font-semibold">Sign In</h1>
         <div className="flex flex-col space-y-4">
           <div className="flex flex-col space-y-1">
@@ -71,6 +72,7 @@ const Login = () => {
           New to Netflix? <button className="text-white hover:underline" onClick={() => setLogin(false)}>Sign up now</button>
         </div>
       </form>
+      <Toaster position="bottom-center" />
     </div>
   )
 }

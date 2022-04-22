@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react"
-import { Hero } from "../interfaces/Hero"
-import { Movie } from "../interfaces/Movie"
+import { HeroDetail } from "../interfaces/HeroDetail"
 import { tmdbBackdrop } from "../constants/movie"
 import Image from "next/image"
 import Link from "next/link"
 import { PlayIcon, InformationCircleIcon } from "@heroicons/react/solid"
 
-const Hero = ({ movies }: Hero) => {
-  const [movie, setMovie] = useState<Movie | null>(null)
-  
-  useEffect(() => {
-    setMovie(movies[Math.floor(Math.random() * movies.length)])
-  }, [movies])
-
+const HeroDetail = ({ movie }: HeroDetail) => {
   return (
     <div className="flex flex-col justify-center h-screen-3/4 sm:h-screen-landscape lg:h-screen-3/4 px-4 lg:px-10 space-y-4">
       <div className="absolute top-0 left-0 right-0 -z-10 w-screen h-screen-3/4 sm:h-screen-landscape lg:h-screen-3/4">
@@ -38,4 +30,4 @@ const Hero = ({ movies }: Hero) => {
   )
 }
 
-export default Hero
+export default HeroDetail

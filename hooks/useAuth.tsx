@@ -9,20 +9,20 @@ import {
 } from "firebase/auth"
 import { auth } from "../firebase"
 import { IAuth, Auth } from "../interfaces/Auth"
+import errors from "../utils/errors"
+import toast from "react-hot-toast"
 
 const AuthContext = createContext<IAuth>({
   user: null,
   signUp: async () => {},
   signIn: async () => {},
   logout: async () => {},
-  error: null,
   loading: false,
 })
 
 export const AuthProvider = ({ children }: Auth) => {
   const [loading, setLoading] = useState<boolean | false>(false)
   const [user, setUser] = useState<User | null>(null)
-  const [error, setError] = useState<string | null>(null)
   const [initialLoading, setInitialLoading] = useState<boolean | true>(true)
   const router = useRouter()
 
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }: Auth) => {
       router.push("/")
       setLoading(false)
     })
-    .catch((err) => alert(err))
+    .catch((err) => toast.error(errors[err.code]))
     .finally(() => setLoading(false))
   }
 
@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }: Auth) => {
       router.push("/")
       setLoading(false)
     })
-    .catch((err) => alert(err))
+    .catch((err) => toast.error(errors[err.code]))
     .finally(() => setLoading(false))
   }
 
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }: Auth) => {
   }
 
   const memoedValue = useMemo(
-    () => ({ user, signUp, signIn, logout, error, loading }),
+    () => ({ user, signUp, signIn, logout, loading }),
     [user, loading]
   )
 
