@@ -9,14 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.8",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
     "@heroicons/react": "^1.0.6",
     "@hookform/resolvers": "^2.8.8",
     "autoprefixer": "^10.4.4",
     "firebase": "^9.6.11",
-    "framer-motion": "^6",
     "next": "12.1.5",
     "postcss": "^8.4.12",
     "react": "18.0.0",

@@ -1,5 +1,6 @@
 import { Movie } from "./Movie"
 
 export interface HeroDetail {
-  movie: Movie
+  movie: Movie,
+  video: string
 }
