@@ -1,10 +1,11 @@
 import { Genre } from "./Genre"
+import { Releases } from "./Releases"
 
 export interface Movie {
   title: string
   backdrop_path: string
-  media_type?: string
-  release_date?: string
+  media_type: string
+  release_date: string
   first_air_date: string
   id: number
   name: string
@@ -17,5 +18,6 @@ export interface Movie {
   vote_average: number
   vote_count: number,
   genres: Genre[],
-  runtime: number
+  runtime: number,
+  releases: Releases
 }

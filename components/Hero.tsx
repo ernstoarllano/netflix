@@ -21,7 +21,7 @@ const Hero = ({ movies }: Hero) => {
       <h1 className="text-4xl lg:text-7xl font-bold">
         {movie?.title}
       </h1>
-      <p className="max-w-xs md:max-w-lg lg:max-w-2xl text-md md:text-lg lg:text-xl text-shadow-md">
+      <p className="max-w-xs md:max-w-lg lg:max-w-2xl text-md text-shadow-md">
         {movie?.overview}
       </p>
       <div className="flex flex-row space-x-3">

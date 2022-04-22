@@ -28,7 +28,11 @@ const Header = () => {
     <header className={`fixed top-0 z-50 w-full px-4 lg:px-10 py-4 ${isScrolled ? 'bg-gray-1000' : 'bg-transparent'} transition-all`}>
       <div className="flex items-center justify-between">
         <div className="flex flex-row items-center space-x-2 md:space-x-20">
-          <Image src="/netflix.svg" alt="Netflix" width={150} height={50} className="cursor-pointer" />
+          <Link href="/">
+            <a>
+              <Image src="/netflix.svg" alt="Netflix" width={150} height={50} className="cursor-pointer" />
+            </a>
+          </Link>
           <ul className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:space-x-10">
             <li>Home</li>
             <li>Movies</li>

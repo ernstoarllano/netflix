@@ -1,6 +1,9 @@
-import { Movie } from "./Movie"
-
 export interface HeroDetail {
-  movie: Movie,
-  video: string
+  video: string | null,
+  title: string,
+  releaseDate: string,
+  contentRating: string | null,
+  runtTime: number,
+  genre: string,
+  overview: string
 }
