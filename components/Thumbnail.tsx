@@ -24,7 +24,7 @@ const Thumbnail = ({ movie }: Thumbnail) => {
     <div className="relative min-w-poster lg:min-w-thumbnail h-52 lg:h-48 transition-all duration-200 ease-out md:hover:scale-105">
       <Link href={`/title/${movie?.id}`}>
         <a>
-          <Image layout="fill" objectFit="fill" src={isMobile ? `${tmdbBackdrop}${movie?.poster_path}` : `${tmdbPoster}${movie?.backdrop_path}`} alt={movie?.title} />
+          <Image layout="fill" objectFit="fill" src={isMobile ? `${tmdbPoster}${movie?.poster_path}` : `${tmdbBackdrop}${movie?.backdrop_path}`} alt={movie?.title} />
         </a>
       </Link>
     </div>

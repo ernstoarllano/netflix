@@ -25,6 +25,8 @@ const MovieDetail = ({ movie }: MovieDetail) => {
     }
 
     const findContentRating = () => {
+      if (movie?.releases?.countries.findIndex((release: Release) => release.iso_3166_1 === "US") === -1) return
+
       const index = movie?.releases?.countries.findIndex((release: Release) => release.iso_3166_1 === "US")
       setContentRating(movie?.releases?.countries[index].certification)
     }

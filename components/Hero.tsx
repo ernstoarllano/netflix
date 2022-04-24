@@ -28,7 +28,7 @@ const Hero = ({ movies }: Hero) => {
         <button className="flex items-center gap-x-1 px-6 py-2 text-sm font-semibold text-black bg-white rounded transition hover:opacity-75" onClick={(e) => console.log(e)}>
           <PlayIcon className="w-6 h-6" /> Play
         </button>
-        <Link href={`${movie?.id}`}>
+        <Link href={`/title/${movie?.id}`}>
           <a className="flex items-center gap-x-1 px-6 py-2 text-sm font-semibold text-white bg-slate-500 rounded transition hover:opacity-75">
             <InformationCircleIcon className="w-6 h-6" /> More Info
           </a>

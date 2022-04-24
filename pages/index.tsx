@@ -6,7 +6,7 @@ import Carousel from "../components/Carousel"
 import requests from "../utils/requests"
 import useAuth from "../hooks/useAuth"
 
-const Home = ({ netflixOriginals, topRated, trending, actionMovies, comedyMovies, horrorMovies, romanceMovies, documentaries }: Home) => {
+const Home = ({ netflix, top, trending, action, comedy, horror, romance, documentary }: Home) => {
   const { loading } = useAuth()
 
   if (loading) return null
@@ -20,14 +20,14 @@ const Home = ({ netflixOriginals, topRated, trending, actionMovies, comedyMovies
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Hero movies={netflixOriginals} />
-      <Carousel header="Top Rated" movies={topRated} />
+      <Hero movies={netflix} />
+      <Carousel header="Top Rated" movies={top} />
       <Carousel header="Trending Now" movies={trending} />
-      <Carousel header="Action" movies={actionMovies} />
-      <Carousel header="Comedies" movies={comedyMovies} />
-      <Carousel header="Horror" movies={horrorMovies} />
-      <Carousel header="Romance" movies={romanceMovies} />
-      <Carousel header="Documentaries" movies={documentaries} />
+      <Carousel header="Action" movies={action} />
+      <Carousel header="Comedies" movies={comedy} />
+      <Carousel header="Horror" movies={horror} />
+      <Carousel header="Romance" movies={romance} />
+      <Carousel header="documentary" movies={documentary} />
     </div>
   )
 }
@@ -36,35 +36,35 @@ export default Home
 
 export async function getServerSideProps() {
   const [
-    netflixOriginals, 
-    topRated, 
+    netflix, 
+    top, 
     trending, 
-    actionMovies, 
-    comedyMovies, 
-    horrorMovies, 
-    romanceMovies, 
-    documentaries
+    action, 
+    comedy, 
+    horror, 
+    romance, 
+    documentary
   ] = await Promise.all([
-    fetch(requests.netflixOriginals).then((res) => res.json()),
-    fetch(requests.topRated).then((res) => res.json()),
+    fetch(requests.netflix).then((res) => res.json()),
+    fetch(requests.top).then((res) => res.json()),
     fetch(requests.trending).then((res) => res.json()),
-    fetch(requests.actionMovies).then((res) => res.json()),
-    fetch(requests.comedyMovies).then((res) => res.json()),
-    fetch(requests.horrorMovies).then((res) => res.json()),
-    fetch(requests.romanceMovies).then((res) => res.json()),
-    fetch(requests.documentaries).then((res) => res.json())
+    fetch(requests.action).then((res) => res.json()),
+    fetch(requests.comedy).then((res) => res.json()),
+    fetch(requests.horror).then((res) => res.json()),
+    fetch(requests.romance).then((res) => res.json()),
+    fetch(requests.documentary).then((res) => res.json())
   ])
 
   return {
     props: {
-      netflixOriginals: netflixOriginals.results,
-      topRated: topRated.results,
+      netflix: netflix.results,
+      top: top.results,
       trending: trending.results,
-      actionMovies: actionMovies.results,
-      comedyMovies: comedyMovies.results,
-      horrorMovies: horrorMovies.results,
-      romanceMovies: romanceMovies.results,
-      documentaries: documentaries.results
+      action: action.results,
+      comedy: comedy.results,
+      horror: horror.results,
+      romance: romance.results,
+      documentary: documentary.results
     }
   }
 }

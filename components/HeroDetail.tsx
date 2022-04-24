@@ -1,6 +1,6 @@
 import { HeroDetail } from "../interfaces/HeroDetail"
 import { getYear } from "../helpers/getYear"
-import { convertTime } from "../helpers/convertTime"
+import { getRunTime } from "../helpers/getRunTime"
 
 const HeroDetail = ({ video, title, releaseDate, contentRating, genre, runtTime, overview }: HeroDetail) => {
   return (
@@ -15,7 +15,7 @@ const HeroDetail = ({ video, title, releaseDate, contentRating, genre, runtTime,
         <span>{getYear(releaseDate)}</span>
         <span className="px-2 border border-white">{contentRating}</span>
         <span>{genre}</span>
-        <span>{convertTime(runtTime)}</span>
+        <span>{getRunTime(runtTime)}</span>
       </div>
       <p className="max-w-xs md:max-w-lg lg:max-w-2xl text-md text-shadow-md">
         {overview}

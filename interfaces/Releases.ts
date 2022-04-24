@@ -6,5 +6,5 @@ export interface Release {
 }
 
 export interface Releases {
-  [key: string]: Release[]
+  countries: Release[]
 }

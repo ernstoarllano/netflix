@@ -1,12 +1,12 @@
 import { Movie } from "./Movie"
 
 export interface Home {
-  netflixOriginals: Movie[],
-  topRated: Movie[],
+  netflix: Movie[],
+  top: Movie[],
   trending: Movie[],
-  actionMovies: Movie[],
-  comedyMovies: Movie[],
-  horrorMovies: Movie[],
-  romanceMovies: Movie[],
-  documentaries: Movie[]
+  action: Movie[],
+  comedy: Movie[],
+  horror: Movie[],
+  romance: Movie[],
+  documentary: Movie[]
 }

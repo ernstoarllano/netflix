@@ -3,14 +3,14 @@ interface Requests {
 }
 
 const requests: Requests = {
-  netflixOriginals: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_network=213`,
-  topRated: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.tmdb}`,
-  trending: `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.tmdb}`,
-  actionMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=28`,
-  comedyMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=35`,
-  horrorMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=27`,
-  romanceMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=10749`,
-  documentaries: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=99`
+  netflix: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_network=213`,
+  top: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.tmdb}`,
+  trending: `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.tmdb}`,
+  action: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=28`,
+  comedy: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=35`,
+  horror: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=27`,
+  romance: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=10749`,
+  documentary: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.tmdb}&with_genres=99`
 }
 
 export default requests

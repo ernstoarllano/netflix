@@ -1,6 +1,10 @@
+import Header from "../components/Header"
+
 const Account = () => {
   return (
-    <></>
+    <div>
+      <Header />
+    </div>
   )
 }
 
